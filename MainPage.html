@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shotcut icon" href="favicon.ico" type="image/x-icon">
+		<title>BigSale!</title>
+		<link rel="stylesheet" type="text/css" href="css/MainPage.css">
+		<script type="text/javascript">
+			function showRu() {
+				document.getElementById("ru").style.display = "";
+				document.getElementById("en").style.display = "none";
+			}
+			function showEn() {
+				document.getElementById("en").style.display = "";
+				document.getElementById("ru").style.display = "none";
+			}
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(e){
+   			var left = 0,
+   			top = 0,
+   			element = $('body'),
+   			offset =  { left: element.offset().left, top: element.offset().top };
+   			element.bind('mousemove', function(e){
+     	 	left = (e.pageX-offset.left);
+      		top = (e.pageY-offset.top);
+      		$(this).css({
+          	backgroundPosition: '-'+(0.01*left)+'px -'+(0.01*top)+'px'
+          
+      		});
+    		});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="switchG" align="right">
+			<img class="switch" id="r1" src="img/RULogo.png" onclick="showRu()">
+			<img class="switch" id="e1" src="img/ENLogo.png" onclick="showEn()">
+		</div>
+
+		<div id="menu">
+			<div class="nickname" id="ru">
+				<p>Введите имя:</p>
+				<br>
+				<form method="post" action="script/InputName.js"><input autofocus type="text" placeholder="Имя"></form>
+			</div>
+			<div class="nickname" id="en">
+				<p>Enter your name:</p>
+				<br>
+				<form method="post" action="script/InputName.js"><input autofocus type="text" placeholder="Nickname"></form>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById("en").style.display = "";
+			document.getElementById("ru").style.display = "none";
+		</script>
+	</body>
+</html>
