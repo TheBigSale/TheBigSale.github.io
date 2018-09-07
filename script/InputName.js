@@ -1,1 +1,1 @@
-document.getElementsByTagName("body").innerHTML = "";
+document.getElementsByTagName("body").innerHTML = "<canvas id="map"></canvas>";
